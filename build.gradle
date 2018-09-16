@@ -1,3 +1,13 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+  }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'java'
 apply plugin: 'maven'
 
@@ -18,9 +28,9 @@ repositories {
 
 dependencies {
   // https://github.com/jhy/jsoup/issues/911 prevents upgrading to JSoup 1.11.2.
-  implementation 'org.jsoup:jsoup:1.9.2'
-  implementation 'org.apache.commons:commons-lang3:3.7'
-  testImplementation 'junit:junit:4.12'
+  compile 'org.jsoup:jsoup:1.9.2'
+  compile 'org.apache.commons:commons-lang3:3.7'
+  testCompile 'junit:junit:4.12'
 }
 
 configurations.all {
